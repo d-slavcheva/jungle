@@ -1,0 +1,75 @@
+/* base */
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 100%;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: $font-fam;
+  background-color: white;
+  color: $font-color;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+/* "neue" HTML5 Elemente */
+header,
+main,
+section,
+nav,
+aside,
+article,
+footer,
+figure,
+figcaption {
+  display: block;
+  padding: 0;
+}
+
+h {
+  &1,
+  &2,
+  &3 {
+    font-family: $font-fam-h;
+  }
+}
+h1{
+  font-size: 2rem;
+  text-align: center;
+}
+
+h2 {
+  font-size: 2rem;
+  letter-spacing: 1px;
+
+}
+
+hr {
+  width: 5rem;
+  height: 3px;
+  background-color: $primary;
+  border: none;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+  color: $font-color;
+}
+
+textarea {
+  resize: none;
+}
+
+address {
+  font-style: normal;
+}

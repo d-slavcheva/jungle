@@ -1,0 +1,24 @@
+$cards: (
+  1: card1,
+  2: card2,
+  3: card3
+);
+
+@each $i, $y in $cards {
+  .card#{$i} {
+    flex-basis: 20%;
+    border: 2px solid rgba($color: #000000, $alpha: .2);
+    border-radius:0 20px 0 20px;
+    text-align: center;
+    
+  }
+}
+
+
+
+$breakpoints: (
+  small: $break-small,
+  medium: $break-medium,
+  large: $break-large,
+ 
+);

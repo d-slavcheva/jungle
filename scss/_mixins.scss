@@ -1,0 +1,58 @@
+@mixin spacing($top-bottom: 1rem, $left-right: 1rem) {
+  @media only screen and (min-width: $break-medium) {
+    padding: $top-bottom $left-right;
+  }
+  @media only screen and (max-width: $break-medium) {
+    padding: 5% 10%;
+  }
+  @media only screen and (max-width: $break-small) {
+    padding: 5% 5%;
+  }
+}
+
+@mixin button($color) {
+  text-transform: uppercase;
+  padding: 5px 1.6rem;
+  transition: $transition;
+  cursor: pointer;
+  font-weight: 700;
+
+  @if $color==$primary {
+    background-color: none;
+    border: $primary solid 2px;
+
+    &:hover {
+      background-color: $primary;
+      color: white;
+    }
+  } @else {
+    background-image: linear-gradient(90deg, $primary 60%, $color);
+    color: white;
+    border-radius: 0 10px 0 10px;
+    border: 2px solid $color;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+    &:hover {
+      background-image: none;
+      background-color: white;
+      color: $color;
+    }
+  }
+}
+
+
+
+@mixin flexbox(
+  $direction: row,
+  $justify-content: center,
+  $align-items: center,
+  $gap: 1rem
+) {
+  display: flex;
+  flex-direction: $direction;
+  flex-wrap: wrap;
+  justify-content: $justify-content;
+  align-items: $align-items;
+  gap: $gap;
+}

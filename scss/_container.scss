@@ -1,0 +1,152 @@
+header {
+  height: 80vh;
+  background-image: url(../img/background-2.png), url(../img/background-1.png);
+  background-repeat: no-repeat;
+  background-position: center, $space $space;
+  background-size: contain, calc(100% - $space * 2) calc(100% - $space * 2);
+
+  nav {
+    margin: 0 $space;
+    padding: 1rem 0;
+    font-weight: 700;
+    text-transform: uppercase;
+    max-height: 10vmax;
+   
+    @include flexbox(row, space-between, center, 0);
+
+    > :first-child {
+      i {
+        font-size: 2rem;
+
+        &:hover {
+          color: $primary;
+        }
+      }
+    }
+    ul {
+      @include flexbox();
+      a {
+        padding-bottom: 8px;
+        &:hover {
+          border-bottom: 2px $primary solid;
+        }
+      }
+    }
+    > :last-child {
+      @include button($primary);
+    }
+  }
+
+  section {
+    @include flexbox(column, center, center, 2rem);
+    margin: 0 auto;
+    width: 400px;
+    height: calc(100% - $space * 2);
+    a {
+      @include button($secondary);
+    }
+  }
+}
+
+main {
+  section:nth-child(1) {
+    padding: 0 $space;
+    background-image: url(../img/background-3.png);
+    background-repeat: no-repeat;
+    background-size: 400px;
+    background-position: bottom right;
+    box-shadow: -5px -5px 6px rgba(#000000, 0.1);
+    blockquote {
+      padding-top: $space;
+      text-align: center;
+      width: 50%;
+      margin: 3rem auto;
+      font-size: 1.8rem;
+      line-height: 2.2;
+      &::before {
+        content: "";
+        display: inline-block;
+        height: 3rem;
+        width: 3rem;
+        background-size: 3rem 3rem;
+        background-image: url(../img/quote.svg);
+        background-repeat: no-repeat;
+      }
+
+      &::after {
+        content: "";
+        display: inline-block;
+        height: 3rem;
+        width: 3rem;
+        background-size: 3rem 3rem;
+        background-image: url(../img/quote2.svg);
+        background-repeat: no-repeat;
+      }
+    }
+    > div {
+      width: 50%;
+      @include flexbox(column, center, start, 2rem);
+      p:nth-child(2) {
+        font-size: 1.2rem;
+        font-weight: 700;
+      }
+    }
+  }
+  section:nth-child(2) {
+    box-shadow: 0px 5px 10px rgba(#000000, 0.1) inset;
+    margin: $space auto;
+    height: 80vh;
+    background-image: url(../img/parallax.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+
+    position: relative;
+    h2 {
+      text-align: center;
+      vertical-align: middle;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+
+  section:nth-child(3) {
+    margin: $space;
+    @include flexbox(column, center, center, 1rem);
+
+    > div {
+      @include flexbox(row, center, center, 2rem);
+      p {
+        margin: 2rem;
+      }
+
+      a {
+        display: block;
+        margin: 1rem auto;
+        @include button($secondary);
+      }
+    }
+  }
+}
+
+footer {
+  padding: 2rem $space;
+  background-color: lighten(#000000, 90%);
+  box-shadow: 0px 5px 10px rgba(#000000, 0.1) inset;
+  @include flexbox(row, space-between, center, 2rem);
+  form input {
+    background-color: transparent;
+    border: none;
+  }
+  ul {
+    @include flexbox(row, space-between, center, 0.8rem);
+
+    li:hover {
+      a {
+        color: $primary;
+      }
+    }
+  }
+}
